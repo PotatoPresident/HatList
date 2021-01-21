@@ -1,36 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "tatertweaks",
+  "id": "hatlist",
   "version": "${version}",
-  "name": "TaterTweaks",
-  "description": "Random tweaks",
+  "name": "Hat List",
+  "description": "Shows the hat layer by default on the tab list",
   "authors": [
     "Potatoboy9999"
   ],
   "contact": {},
   "license": "MIT",
   "icon": "icon.png",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
-      "us.potatoboy.tatertweaks.client.TatertweaksClient"
-    ],
-    "main": [
-      "us.potatoboy.tatertweaks.Tatertweaks"
-    ],
-    "server": [
-      "us.potatoboy.tatertweaks.server.TatertweaksServer"
-    ],
-    "modmenu": [
-      "us.potatoboy.tatertweaks.client.ModMenuIntegration"
+      "us.potatoboy.hatlist.client.HatListClient"
     ]
   },
   "mixins": [
-    "tatertweaks.mixins.json"
+    "hatlist.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.10.8",
     "fabric": "*",
-    "minecraft": "1.16.4"
+    "minecraft": ">=1.16.4"
   }
 }

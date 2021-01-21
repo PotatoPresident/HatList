@@ -1,12 +1,10 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "us.potatoboy.tatertweaks.mixin",
+  "package": "us.potatoboy.hatlist.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
   "client": [
-    "client.PlayerListHudMixin"
+    "PlayerListHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

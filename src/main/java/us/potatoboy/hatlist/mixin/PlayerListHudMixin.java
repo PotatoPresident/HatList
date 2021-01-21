@@ -1,4 +1,4 @@
-package us.potatoboy.tatertweaks.mixin.client;
+package us.potatoboy.hatlist.mixin;
 
 import com.mojang.authlib.GameProfile;
 import net.fabricmc.api.EnvType;
@@ -9,8 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import us.potatoboy.tatertweaks.Tatertweaks;
-import us.potatoboy.tatertweaks.client.PlayerListPlayer;
+import us.potatoboy.hatlist.client.PlayerListPlayer;
 
 import java.util.UUID;
 
@@ -19,10 +18,11 @@ import java.util.UUID;
 public abstract class PlayerListHudMixin {
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/world/ClientWorld;getPlayerByUuid(Ljava/util/UUID;)Lnet/minecraft/entity/player/PlayerEntity;"))
     private PlayerEntity renderPlayerIconInject(ClientWorld clientWorld, UUID uuid) {
-        if (Tatertweaks.config.alwaysShowHatOnList) {
-            return new PlayerListPlayer(clientWorld, new GameProfile(uuid, "Tater"));
+        PlayerEntity playerEntity = clientWorld.getPlayerByUuid(uuid);
+        if (playerEntity != null) {
+            return playerEntity;
         }
 
-        return clientWorld.getPlayerByUuid(uuid);
+        return new PlayerListPlayer(clientWorld, new GameProfile(uuid, "H"));
     }
 }

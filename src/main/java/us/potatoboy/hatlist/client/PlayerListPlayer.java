@@ -1,15 +1,11 @@
-package us.potatoboy.tatertweaks.client;
+package us.potatoboy.hatlist.client;
 
 import com.mojang.authlib.GameProfile;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.OtherClientPlayerEntity;
 import net.minecraft.client.render.entity.PlayerModelPart;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 @Environment(EnvType.CLIENT)
 public class PlayerListPlayer extends OtherClientPlayerEntity {
