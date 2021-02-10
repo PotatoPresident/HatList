@@ -7,7 +7,18 @@
   "authors": [
     "Potatoboy9999"
   ],
-  "contact": {},
+  "contact": {
+    "issues": "https://github.com/PotatoPresident/HatList/issues",
+    "sources": "https://github.com/PotatoPresident/HatList",
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/hat-list"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/ByaVuebAPb"
+      }
+    }
+  },
   "license": "MIT",
   "icon": "icon.png",
   "environment": "client",
