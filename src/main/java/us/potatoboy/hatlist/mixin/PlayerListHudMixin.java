@@ -16,6 +16,8 @@ import java.util.UUID;
 @Environment(EnvType.CLIENT)
 @Mixin(PlayerListHud.class)
 public abstract class PlayerListHudMixin {
+    private PlayerEntity defaultPlayer;
+
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/world/ClientWorld;getPlayerByUuid(Ljava/util/UUID;)Lnet/minecraft/entity/player/PlayerEntity;"))
     private PlayerEntity renderPlayerIconInject(ClientWorld clientWorld, UUID uuid) {
         PlayerEntity playerEntity = clientWorld.getPlayerByUuid(uuid);
@@ -23,6 +25,9 @@ public abstract class PlayerListHudMixin {
             return playerEntity;
         }
 
-        return new PlayerListPlayer(clientWorld, new GameProfile(uuid, "H"));
+        if (defaultPlayer == null) {
+            defaultPlayer = new PlayerListPlayer(clientWorld, new GameProfile(uuid, "H"));
+        }
+        return defaultPlayer;
     }
 }
