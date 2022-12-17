@@ -10,7 +10,7 @@ import net.minecraft.client.world.ClientWorld;
 @Environment(EnvType.CLIENT)
 public class PlayerListPlayer extends OtherClientPlayerEntity {
     public PlayerListPlayer(ClientWorld world, GameProfile profile) {
-        super(world, profile, null);
+        super(world, profile);
     }
 
     @Override
